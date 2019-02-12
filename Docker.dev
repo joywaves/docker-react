@@ -1,0 +1,15 @@
+# from node:alpine
+FROM node:alpine
+
+# ch workdir to /app
+WORKDIR '/app'
+
+# copy file into
+COPY package.json .
+RUN npm install
+
+# copy rest of the files
+COPY . .
+
+# run it
+CMD ["npm", "run", "start"]
