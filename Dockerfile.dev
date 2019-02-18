@@ -1,5 +1,5 @@
 # from node:alpine
-FROM node:alpine
+FROM node:6.9.4
 
 # ch workdir to /app
 WORKDIR '/app'
@@ -10,6 +10,8 @@ RUN npm install
 
 # copy rest of the files
 COPY . .
+
+EXPOSE 3000
 
 # run it
 CMD ["npm", "run", "start"]
